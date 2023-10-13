@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(34, 127, 250);
+}
+
+#root {
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
