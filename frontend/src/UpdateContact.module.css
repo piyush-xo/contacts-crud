@@ -1,0 +1,73 @@
+.container {
+  width: 60%;
+  background-color: rgb(245, 252, 254);
+  border-radius: 7.5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead,
+tbody {
+  display: block;
+}
+
+thead {
+  background-color: rgb(24, 24, 60);
+  color: rgb(215, 236, 236);
+  border-top-right-radius: 7.5px;
+  border-top-left-radius: 7.5px;
+  padding: 10px 0px;
+}
+
+tbody {
+  height: 280px;
+  overflow-y: auto;
+  margin: 5px;
+  color: rgb(42, 41, 41);
+}
+
+th,
+td {
+  padding: 10px;
+  min-width: 50px;
+  font-size: 13.5px;
+  letter-spacing: 1px;
+  font-weight: normal;
+  text-align: center;
+}
+
+th {
+  font-size: 15px;
+}
+
+td img {
+  width: 17px;
+  cursor: pointer;
+}
+
+.container button {
+  width: 70px;
+  align-self: flex-end;
+  padding: 3px;
+  margin: 5px;
+  font-family: serif;
+  font-size: 14px;
+  border: 2px solid rgb(24, 24, 60);
+  background-color: transparent;
+}
+
+.container button:hover {
+  background-color: rgb(24, 24, 60);
+  color: white;
+  transition-duration: 300ms;
+}
+
+.container button:active,
+td img:active {
+  transform: scale(0.9);
+}
