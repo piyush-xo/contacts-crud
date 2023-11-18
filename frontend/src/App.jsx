@@ -11,6 +11,7 @@ function App() {
         <Route path="/" element={<Contacts />}></Route>
         <Route path="/create" element={<CreateContact />}></Route>
         <Route path="/update/:id" element={<UpdateContact />}></Route>
+        <Route path="*" element={<><h1>404 page not found</h1></>}></Route>
       </Routes>
     </BrowserRouter>
   );

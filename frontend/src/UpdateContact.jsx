@@ -1,20 +1,29 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./CreateContact.module.css";
+import axios from "axios";
 
 function UpdateContact() {
   const { state } = useLocation();
   console.log(state);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     event.preventDefault();
     const contact = {
-      name: e.target[0].value ? e.target[0].value :  state.name,
+      name: e.target[0].value ? e.target[0].value : state.name,
       phone: e.target[1].value ? e.target[1].value : state.phone,
       email: e.target[2].value ? e.target[2].value : state.email,
       about: e.target[3].value ? e.target[3].value : state.about,
     };
-    console.log(contact);
+    console.log(state._id, contact);
+    axios
+      .post("http://localhost:3000/update", { id: state._id, user: contact })
+      .then((res) => {
+        console.log(res);
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

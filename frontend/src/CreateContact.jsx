@@ -1,11 +1,26 @@
 import React from "react";
+import axios from "axios";
 import styles from "./CreateContact.module.css";
+import { useNavigate } from "react-router-dom";
 
 function CreateContact() {
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     event.preventDefault();
-    const contact = {name: e.target[0].value, phone: e.target[1].value, email: e.target[2].value, about: e.target[3].value};
+    const contact = {
+      name: e.target[0].value,
+      phone: e.target[1].value,
+      email: e.target[2].value,
+      about: e.target[3].value,
+    };
     console.log(contact);
+    axios
+      .post("http://localhost:3000/create", contact)
+      .then((res) => {
+        console.log(res);
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
